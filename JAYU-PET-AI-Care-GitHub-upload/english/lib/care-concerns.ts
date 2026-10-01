@@ -1,0 +1,82 @@
+export const CARE_CONCERNS = [
+  {
+    id: 'breath',
+    label: 'Bad breath',
+    image: '/asset/images/concern-breath.png',
+    description: "I'm concerned about my pet's breath",
+    guide: 'Gently lift the lip so the teeth and gums are clearly visible.',
+    target: 'mouth, teeth, and gums',
+    productId: 'dental-brush-gel',
+    productName: 'Dental Care Brush + Dental Gel',
+    productImage: '/asset/images/product-dental-set.png',
+    productUrl: 'https://jayupet.com/collections/dental-care-1',
+    appealPoint: 'A simple daily oral-care routine',
+    aiNote: 'Do not judge odor from a photo; observe only visible oral features.',
+  },
+  {
+    id: 'dental',
+    label: 'Teeth & molars',
+    image: '/asset/images/concern-dental.png',
+    description: "I'm concerned about the tooth surfaces or molars",
+    guide: 'Photograph the tooth surface and inner molars in bright, even light.',
+    target: 'tooth surfaces and molars',
+    productId: 'dental-brush-gel',
+    productName: 'Dental Care Brush + Dental Gel',
+    productImage: '/asset/images/product-dental-set.png',
+    productUrl: 'https://jayupet.com/collections/dental-care-1',
+    appealPoint: 'A small brush head for detailed molar care',
+    aiNote: 'Do not diagnose disease; observe only visible color, deposits, and debris.',
+  },
+  {
+    id: 'tangle',
+    label: 'Tangled coat',
+    image: '/asset/images/concern-tangle.png',
+    description: 'Brushing is difficult or the coat mats easily',
+    guide: 'Center the tangled or matted coat and keep the texture in focus.',
+    target: 'tangled or matted coat',
+    productId: 'magic-brushing-mist',
+    productName: 'Magic Brushing Mist',
+    productImage: '/asset/images/product-brushing-mist.png',
+    productUrl: 'https://jayupet.com/collections/skin-coat-care-new/products/magicbrushingmist',
+    appealPoint: 'Helps gently smooth and manage tangled coats',
+    aiNote: 'Observe only visible matting, texture, or debris.',
+  },
+  {
+    id: 'face',
+    label: 'Eye-area debris',
+    image: '/asset/images/concern-face.png',
+    description: 'I notice debris around the eyes or facial coat',
+    guide: 'Turn off the flash and include the eye area and surrounding coat.',
+    target: 'eye area and surrounding facial coat',
+    productId: 'facial-grooming-comb',
+    productName: 'Facial Grooming Comb',
+    productImage: '/asset/images/product-facial-comb.png',
+    productUrl: 'https://jayupet.com/collections/skin-coat-care-new',
+    appealPoint: 'Detailed grooming for small debris around the eyes and face',
+    aiNote: 'Do not infer disease; observe only visible debris or staining on the coat.',
+  },
+  {
+    id: 'chin',
+    label: 'Cat chin buildup',
+    image: '/asset/images/concern-chin.png',
+    description: 'I notice dark specks or buildup under the chin',
+    guide: 'Gently lift the head so the skin under the chin is bright and clear.',
+    target: "the cat's under-chin skin and coat",
+    productId: 'cat-chin-care-kit',
+    productName: 'Cat Blackhead Free Kit',
+    productImage: '/asset/images/product-chin-kit.png',
+    productUrl: 'https://jayupet.com/collections/acne-care-new/products/cat-blackhead-free-kit-black-seed-cleaner-exfoliating-brush',
+    appealPoint: 'A step-by-step soften, wipe, and brush routine',
+    aiNote: 'Use only for cats. Do not diagnose acne; observe only visible dark specks, buildup, or clumped fur.',
+    badge: 'Cat',
+    petType: 'cat',
+  },
+] as const;
+
+export type ConcernId = (typeof CARE_CONCERNS)[number]['id'];
+export type CareConcern = (typeof CARE_CONCERNS)[number];
+
+export function findConcern(id: string) {
+  return CARE_CONCERNS.find((concern) => concern.id === id);
+}
+

@@ -1,0 +1,82 @@
+export const CARE_CONCERNS = [
+  {
+    id: 'breath',
+    label: '입 냄새',
+    image: '/asset/images/concern-breath.png',
+    description: '평소 입 냄새가 신경 쓰여요',
+    guide: '입술을 살짝 들어 치아와 잇몸이 보이도록 찍어주세요.',
+    target: '입안, 치아와 잇몸',
+    productId: 'dental-brush-gel',
+    productName: '덴탈 브러시 + 덴탈겔',
+    productImage: '/asset/images/product-dental-set.png',
+    productUrl: 'https://jayupet.com/collections/dental-care-1',
+    appealPoint: '매일 꾸준히 하는 구강 청결 관리',
+    aiNote: '사진으로 냄새 자체를 판단하지 말고, 구강 부위 노출과 눈에 보이는 특징만 관찰한다.',
+  },
+  {
+    id: 'dental',
+    label: '치아·어금니',
+    image: '/asset/images/concern-dental.png',
+    description: '치아 표면이나 어금니 상태가 걱정돼요',
+    guide: '걱정되는 치아 표면과 어금니 안쪽이 밝게 보이도록 찍어주세요.',
+    target: '치아 표면과 어금니',
+    productId: 'dental-brush-gel',
+    productName: '덴탈 브러시 + 덴탈겔',
+    productImage: '/asset/images/product-dental-set.png',
+    productUrl: 'https://jayupet.com/collections/dental-care-1',
+    appealPoint: '작은 헤드로 어금니까지 섬세하게 관리',
+    aiNote: '치석이나 질환을 확정하지 말고, 치아 표면의 색과 부착물 등 직접 보이는 특징만 관찰한다.',
+  },
+  {
+    id: 'tangle',
+    label: '털 엉킴',
+    image: '/asset/images/concern-tangle.png',
+    description: '빗질이 어렵거나 털이 자주 뭉쳐요',
+    guide: '엉키거나 뭉친 털이 화면 중앙에 선명하게 보이도록 찍어주세요.',
+    target: '엉키거나 뭉친 털',
+    productId: 'magic-brushing-mist',
+    productName: '매직 브러싱 미스트',
+    productImage: '/asset/images/product-brushing-mist.png',
+    productUrl: 'https://jayupet.com/collections/skin-coat-care-new/products/magicbrushingmist',
+    appealPoint: '엉킨 털을 부드럽게 정돈하는 데 도움',
+    aiNote: '털의 뭉침, 결, 이물질 등 사진에 직접 보이는 특징만 관찰한다.',
+  },
+  {
+    id: 'face',
+    label: '눈곱·작은 이물질',
+    image: '/asset/images/concern-face.png',
+    description: '눈가나 얼굴 털에 이물질이 보여요',
+    guide: '플래시를 끄고 눈가와 주변 털이 함께 보이도록 찍어주세요.',
+    target: '눈가와 주변 얼굴 털',
+    productId: 'facial-grooming-comb',
+    productName: '페이셜 그루밍 콤',
+    productImage: '/asset/images/product-facial-comb.png',
+    productUrl: 'https://jayupet.com/collections/skin-coat-care-new',
+    appealPoint: '눈가와 얼굴 털의 작은 이물질을 세밀하게 정돈',
+    aiNote: '질환을 추정하지 말고 눈가 털에 붙은 이물질과 오염 등 직접 보이는 특징만 관찰한다.',
+  },
+  {
+    id: 'chin',
+    label: '고양이 턱 노폐물',
+    image: '/asset/images/concern-chin.png',
+    description: '턱 아래에 검은 점이나 노폐물이 보여요',
+    guide: '고개를 살짝 들어 턱 아래 피부가 밝고 선명하게 보이도록 찍어주세요.',
+    target: '고양이의 턱 아래 피부와 털',
+    productId: 'cat-chin-care-kit',
+    productName: '캣 친 케어 키트',
+    productImage: '/asset/images/product-chin-kit.png',
+    productUrl: 'https://jayupet.com/collections/acne-care-new/products/cat-blackhead-free-kit-black-seed-cleaner-exfoliating-brush',
+    appealPoint: '불리고 닦고 빗는 단계별 턱 관리',
+    aiNote: '고양이 사진에만 사용한다. 턱드름을 진단하지 말고 검은 점, 노폐물, 털 뭉침 등 직접 보이는 특징만 관찰한다.',
+    badge: '고양이',
+    petType: 'cat',
+  },
+] as const;
+
+export type ConcernId = (typeof CARE_CONCERNS)[number]['id'];
+export type CareConcern = (typeof CARE_CONCERNS)[number];
+
+export function findConcern(id: string) {
+  return CARE_CONCERNS.find((concern) => concern.id === id);
+}
+
